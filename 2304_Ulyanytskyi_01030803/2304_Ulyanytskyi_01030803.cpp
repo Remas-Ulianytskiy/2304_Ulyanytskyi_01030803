@@ -9,6 +9,13 @@ const int MAX_RANGE = 10;
 const int MIN_RANGE = -10;
 
 void fill_array_rand(array<int, ARRAY_SIZE>& num_array);
+void fill_array_rand(array<int, ARRAY_SIZE> & num_array) {
+	srand(time(0));
+
+	for (int i = 0; i < num_array.size(); i++) {
+		num_array[i] = rand() % (MAX_RANGE - MIN_RANGE + 1) + MIN_RANGE;
+	}
+}
 
 int main()
 {
