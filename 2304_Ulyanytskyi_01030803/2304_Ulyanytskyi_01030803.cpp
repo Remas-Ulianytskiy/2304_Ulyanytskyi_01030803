@@ -1,35 +1,35 @@
 #include <iostream>
 #include <array>
-#include <cstdlib>
 #include <ctime>
 
 using namespace std;
 
-void fill_array(array<int, 12> & num_array) {
-	srand(20458);
-	int min = -10;
-	int max = 10;
+const int ARRAY_SIZE = 12;
+const int MAX_RANGE = 10;
+const int MIN_RANGE = -10;
+
+void fill_array_rand(array<int, ARRAY_SIZE> & num_array) {
+	srand(time(0));
 
 	for (int i = 0; i < num_array.size(); i++) {
-		num_array[i] = rand() % (max - min + 1) + min;
+		num_array[i] = rand() % (MAX_RANGE - MIN_RANGE + 1) + MIN_RANGE;
 	}
 }
 
 int main()
 {
-	const int ARRAY_SIZE = 12;
 	int sum = 0;
 
     array<int, ARRAY_SIZE> num_array;
 
-	fill_array(num_array);
+	fill_array_rand(num_array);
 
-	cout << "Array:\n";
-
+	cout << "Array = { ";
 	for (const auto& element : num_array)
 	{
 		cout << element << ' ';
 	}
+	cout << '}';
 
 	for (const auto& element : num_array) {
 		if (element < 0) {
@@ -37,7 +37,7 @@ int main()
 		}
 	}
 
-	cout << "\nSum: " << sum;
+	cout << "\nSum of minimum numbers: " << sum;
 
     return 0;
 }
