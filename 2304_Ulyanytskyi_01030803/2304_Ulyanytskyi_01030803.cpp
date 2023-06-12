@@ -22,14 +22,12 @@ int main()
 	for (const auto& element : num_array)
 	{
 		cout << element << ' ';
-	}
-	cout << '}';
 
-	for (const auto& element : num_array) {
 		if (element < 0) {
 			sum += element;
 		}
 	}
+	cout << '}';
 
 	cout << "\nSum of minimum numbers: " << sum;
 
