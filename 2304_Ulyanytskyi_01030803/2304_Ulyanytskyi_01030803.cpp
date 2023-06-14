@@ -19,13 +19,10 @@ int main()
 	fill_array_rand(num_array);
 
 	cout << "Array = { ";
-	for (const auto& element : num_array)
-	{
+	for (const auto& element : num_array) {
 		cout << element << ' ';
-
-		if (element < 0) {
+		if (element < 0)
 			sum += element;
-		}
 	}
 	cout << '}';
 
